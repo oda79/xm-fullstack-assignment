@@ -21,10 +21,6 @@ This project consists of two main parts:
 
 The backend exposes a simple REST API consumed by the frontend.
 
----
-
-## Features
-
 ### Frontend
 - Form validation powered by **Zod + React Hook Form**
 - Symbol selector with **local mock data filtering**  
