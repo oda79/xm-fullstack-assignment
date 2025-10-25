@@ -1,0 +1,42 @@
+{
+  "name": "web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@xm-schema/shared": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-select": "^5.10.2",
+    "recharts": "^3.3.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@tailwindcss/postcss": "^4.1.16",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.23",
+    "@vitejs/plugin-react": "^5.1.0",
+    "@vitest/coverage-v8": "^4.0.2",
+    "autoprefixer": "^10.4.21",
+    "init": "^0.1.2",
+    "jsdom": "^27.0.1",
+    "msw": "^2.11.6",
+    "react-hook-form": "^7.65.0",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.2",
+    "vitest": "^4.0.2",
+    "whatwg-fetch": "^3.6.20"
+  }
+}

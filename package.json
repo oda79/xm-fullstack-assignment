@@ -1,0 +1,8 @@
+{
+  "name": "xm-fullstack",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
