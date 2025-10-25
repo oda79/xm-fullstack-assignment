@@ -14,12 +14,10 @@ Built with:
 
 This project consists of two main parts:
 
-| Layer        | Path       | Description                                                  |
-|--------------|------------|--------------------------------------------------------------|
-| **Frontend** | `apps/web` | A Vite React app where users request quotes, select a symbol,|
-|              |            | choose date range, and receive data & charts.                |
-| **Backend**  | `apps/api` | An Express server that validates input, fetches stock quote  | 
-|              |            | data (local mocks), and emails the results using Nodemailer. |
+| Layer        | Path       | Description                                                                                                             |
+|--------------|------------|-------------------------------------------------------------------------------------------------------------------------|
+| **Frontend** | `apps/web` | A Vite React app where users request quotes, select a symbol, choose date range, and receive data & charts.             |
+| **Backend**  | `apps/api` | An Express server that validates input, fetches stock quote data (local mocks), and emails the results using Nodemailer.|
 
 The backend exposes a simple REST API consumed by the frontend.
 
@@ -48,7 +46,8 @@ The backend exposes a simple REST API consumed by the frontend.
 ---
 
 ## Monorepo Structure
-.
+
+```
 ├── apps/
 │ ├── api/ # Express backend
 │ └── web/ # React + Vite frontend
@@ -56,6 +55,7 @@ The backend exposes a simple REST API consumed by the frontend.
 │ └── shared/ # Shared Zod schemas and types
 ├── docker-compose.yml
 └── README.md
+```
 
 ---
 
@@ -66,6 +66,7 @@ All quote data is currently served from local JSON files in `apps/api/data/quote
 This design allows the project to run fully offline while still returning realistic responses.
 
 ### Example structure
+```
 apps/
 └── api/
 └── data/
@@ -77,6 +78,7 @@ apps/
 ├── AAOI.json
 ├── AAIT.json
 └── symbols.json
+```
 
 ---
 
