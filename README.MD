@@ -31,13 +31,30 @@ The backend exposes a simple REST API consumed by the frontend.
 - Comprehensive unit and integration tests with **Vitest**
 
 ### Backend
-- `/api/v1/health` GET endpoint - Health check 
-- `/api/v1/symbols` GET endpoint - Company Symbols 
-- `/api/v1/quotes` POST endpoint - Company Symbols Quotes
 - Schema validation shared between frontend and backend via `@xm-schema/shared`
 - Fetches quote data from **local mock JSON files**
 - Sends summary emails via **Nodemailer**
 - Typed responses and unified error handling
+
+### API Endpoints
+`GET /api/v1/health`
+Health check
+
+`GET /api/v1/symbols`
+Returns the list of available symbols for the selector. 
+Responses are HTTP cached with
+```
+Cache-Control: public, max-age={symbolsCacheSeconds}
+```
+where symbolsCacheSeconds is configured in the API (env/config). This keeps the dropdown fast and reduces load.
+
+`POST /api/v1/quotes`
+Request OHLC data for a symbol and date range (validated with shared Zod schema); also triggers an email.
+
+### Relevant Config (API)
+- symbolsCacheSeconds – controls Cache-Control max-age for /symbols.
+- quotesDir – directory for mock quote JSON files.
+- SMTP envs (SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, EMAIL_FROM) for email.
 
 ---
 
