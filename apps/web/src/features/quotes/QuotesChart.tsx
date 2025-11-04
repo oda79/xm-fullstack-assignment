@@ -1,8 +1,8 @@
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from "recharts";
 import { type QuoteRow } from "@xm-schema/shared";
 
-export default function QuotesChart({ rows }: { rows: QuoteRow[] }) {
+export default React.memo(function QuotesChart({ rows }: { rows: QuoteRow[] }) {
   const data = useMemo(
     () =>
       rows.map(r => ({
@@ -31,4 +31,4 @@ export default function QuotesChart({ rows }: { rows: QuoteRow[] }) {
       </div>
     </div>
   );
-}
+})
